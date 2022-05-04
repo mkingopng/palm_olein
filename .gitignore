@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea/
+/data/palm oil prices 021020 - 290422.ods
+/data/palm_oil_data_sources.txt
