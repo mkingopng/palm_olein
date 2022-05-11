@@ -20,3 +20,28 @@ From Michael:
 - the dynamics in related markets like soy, linseed, canola, grapeseed, olive oil and other vegetable oils will have a
   bit impact on the price of palm oil.
 - Weather will have a big impact on supply of all these
+
+# Visualisation
+
+- geo plot country-wise consumption of palm oil (cannot easily get data against consumption)
+  - geo plot country-wise production of palm oil (production is the proxy for consumption)
+  - or import data for a country (quanbo)
+  - temperature pallet 
+- land cultivation fix
+- Total Vegetable oil production by crop fix
+- Comparision between veg oil production and land used
+
+# Some Hypothesis about the price dynamic
+
+## Supply side
+
+According to Michael,
+
+- The price dynamic is likely to be driven by the supply side instead of the demand side
+  - Amount of land used (biggest contribution to the production)
+  - Political policy
+- Demand side seems to be stable
+
+# More data
+
+- https://agropost.wordpress.com/2021/12/ for trading price data of palm oil dated back to 2011
