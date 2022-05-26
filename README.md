@@ -12,7 +12,8 @@ analysis and forecasting of palm olein price and market dynamics
 
 # Data Collection:
 - the Food and Agriculture Organisation (FAO), a part of the UN, has good data. The only issue is that data is mostly annual. It serves as a good source for the long-term data
-- **free** price data is difficult to find. Most commodity prices are available through paid subscription. It was a requirement that data be free. A website (https://agropost.wordpress.com/) has been found that posts free market updates daily, and has price data dating back to 2011. The data is not in an easily extracted format, and will require scraping to obtain and organise. Significant cleaning is anticipated.
+- I have 2 years of daily price data that will suffice to get basic scaffold up, however more dat is required.
+- **free** price data is difficult to find. Most commodity prices are available through paid subscription. It was a requirement that data be free. A website (https://agropost.wordpress.com/) has been found that posts free market updates daily, and has price data dating back to 2011. The data is not in an easily extracted format, and will require scraping to obtain and organise. Significant cleaning requirements are anticipated.
 
 # Analysis
 
