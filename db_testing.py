@@ -27,4 +27,3 @@ with cnx.begin() as connection:
 
 print(land_use_data.head())
 
-
