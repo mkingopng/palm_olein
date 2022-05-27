@@ -22,9 +22,9 @@ print(fao_data.head())
 # check the land_use_data table.
 with cnx.begin() as connection:
     land_use_data = pd.read_sql(
-        '''SELECT * FROM land-use-for-vegetable-crops''',
+        '''SELECT * FROM land_use_for_oil_crops''',
         con=connection)
 
 print(land_use_data.head())
 
-# todo: fix the land_use_data table name. current name throws an error
+
