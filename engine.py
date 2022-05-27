@@ -13,7 +13,7 @@ postgres_str = (f'postgresql://{user_name}:{password}@{ip_address}:{port}/{db_na
                                                                                             password=PG_PASSWORD,
                                                                                             ip_address=IPADDRESS,
                                                                                             port=PORT,
-                                                                                            db_name=DB_NAME))
+                                                                                        db_name=DB_NAME))
 # create an engine
 cnx = create_engine(postgres_str)
 
