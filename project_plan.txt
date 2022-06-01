@@ -8,7 +8,7 @@ phase 1a (data pipeline):
 phase 2 (analysis):
     - long term
     - short term
-
+do the plots for the data I have. update and improve as i progress.
 
 phase 3: (prediction)
 	- feature selection
