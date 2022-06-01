@@ -1,0 +1,21 @@
+phase 1a (data pipeline):
+	- price data: collect data by scraping. use this to show my scraping skills.
+	- fao data: use the fao python api to access their data. ```pip install faodata```
+	- clean data & store in database. use this to show my SQL & cloud skills.
+	- use data from a sql query on a database hosted by AWS to perform analysis.
+	- analyse: use this to show my analytical and visualisation skills.
+
+phase 2 (analysis):
+    - long term
+    - short term
+
+
+phase 3: (prediction)
+	- feature selection
+	- clean data
+	- feature engineering
+	- data augmentation
+	- model selection
+	- model training
+	- model optimisation
+	- perform inference & check accuracy
