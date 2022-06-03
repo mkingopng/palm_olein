@@ -1,4 +1,4 @@
-# Scrapy settings for palm_olein project
+# Scrapy settings for palm_olein_spider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'palm_olein'
+BOT_NAME = 'palm_olein_spider'
 
-SPIDER_MODULES = ['palm_olein.spiders']
-NEWSPIDER_MODULE = 'palm_olein.spiders'
+SPIDER_MODULES = ['palm_olein_spider.spiders']
+NEWSPIDER_MODULE = 'palm_olein_spider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'palm_olein (+http://www.yourdomain.com)'
+#USER_AGENT = 'palm_olein_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'palm_olein.middlewares.PalmOleinSpiderMiddleware': 543,
+#    'palm_olein_spider.middlewares.PalmOleinSpiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'palm_olein.middlewares.PalmOleinDownloaderMiddleware': 543,
+#    'palm_olein_spider.middlewares.PalmOleinSpiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'palm_olein.pipelines.PalmOleinPipeline': 300,
+#    'palm_olein_spider.pipelines.PalmOleinSpiderPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
