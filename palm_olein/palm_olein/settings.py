@@ -1,4 +1,4 @@
-# Scrapy settings for palm_olein_spider project
+# Scrapy settings for palm_olein project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,25 +7,25 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'palm_olein_spider'
+BOT_NAME = 'palm_olein'
 
-SPIDER_MODULES = ['palm_olein_spider.spiders']
-NEWSPIDER_MODULE = 'palm_olein_spider.spiders'
+SPIDER_MODULES = ['palm_olein.spiders']
+NEWSPIDER_MODULE = 'palm_olein.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'palm_olein_spider (+http://www.yourdomain.com)'
+#USER_AGENT = 'palm_olein (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'palm_olein_spider.middlewares.PalmOleinSpiderSpiderMiddleware': 543,
+#    'palm_olein.middlewares.PalmOleinSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'palm_olein_spider.middlewares.PalmOleinSpiderDownloaderMiddleware': 543,
+#    'palm_olein.middlewares.PalmOleinDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,14 +63,14 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'palm_olein_spider.pipelines.PalmOleinSpiderPipeline': 300,
+#    'palm_olein.pipelines.PalmOleinPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
-#AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
 #AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to
