@@ -1,5 +1,5 @@
 [
-{"title": "agropost | Dedicated to Palm Oil & related news"},
+{"date": "Holiday Announcement"},
 {"date": "3 June 2022 \u2013 Palm Oil Market\u00a0Closing"},
 {"date": "3 June 2022 \u2013 Palm Oil Market\u00a0Midday"},
 {"date": "2 June 2022 \u2013 Palm Oil Market\u00a0Closing"},
@@ -9,7 +9,6 @@
 {"date": "31 May 2022 \u2013 Palm Oil Market\u00a0Closing"},
 {"date": "31 May 2022 \u2013 Palm Oil Market\u00a0Midday"},
 {"date": "30 May 2022 \u2013 Palm Oil Market\u00a0Closing"},
-{"date": "30 May 2022 \u2013 Palm Oil Market\u00a0Midday"},
 {"date": null},
 {"date": null},
 {"price": "Jun\u201922"},
@@ -38,9 +37,6 @@
 {"price": "\n"},
 {"price": "Jun\u201922"},
 {"price": "1710"},
-{"price": "\n"},
-{"price": "Jun\u201922"},
-{"price": "1695"},
 {"price": "\n"},
 {"price": "5"}
 ]

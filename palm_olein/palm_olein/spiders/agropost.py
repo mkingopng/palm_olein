@@ -9,10 +9,6 @@ class AgropostSpider(scrapy.Spider):
     start_urls = ["https://agropost.wordpress.com/"]
 
     def parse(self, response):
-        for title in response.css('title'):
-            yield {
-                'title': title.css('title::text').get(),  # this works
-            }
         for date in response.css('h2'):
             yield {
                 'date': date.css('a::text').get(),  # this works
