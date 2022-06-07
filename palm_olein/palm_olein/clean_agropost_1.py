@@ -1,3 +1,7 @@
+"""
+clean the data scraped using the scrapy Agropost spider
+"""
+
 import pandas as pd
 
 pd.options.display.max_rows = 50

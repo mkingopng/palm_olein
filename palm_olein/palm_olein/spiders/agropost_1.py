@@ -18,10 +18,8 @@ class AgropostSpider(scrapy.Spider):
                 "price": price.css('td::text')[2].get()  # this works
             }
 
-# todo: i can now get a return json file which contains the information I need, plus a lot of rubbish. THat said, this
-#  code feels a little less brittle than the selenium code. from what I've read, selenium was meant for website testing.
-#  scrapy is intended to be a more complete web scraping solution. I'm sure its overkill for this project, but I think
-#  its worth learning.
+# todo: i can now get a return json file which contains the information I need, plus a lot of rubbish.
+#  - I've cleaned the results from the first page. Need to extend it to scrape more now.
 #  - currently, i need to instantiate the crawler from the scrapy command line. This is OK but I'm sure can be improved
-#  - I need to get the data from json into pandas df and clean the data.
+
 
