@@ -15,8 +15,12 @@ df = pd.read_json(price_json_file)
 date = df['date'].dropna()  # drop Nans
 date.drop([0], inplace=True)
 date = date.str.split(pat=" – ", expand=True).drop(columns=1)  # split the date string into two columns, drop one
-date.reset_index(drop=True, inplace=True)  # reset index
+# fix_me: problem starts from line 28 "holiday announcement"
 date.columns = ['date']  # rename the column
+date = date[date["date"].str.contains("HOLIDAY ANNOUNCEMENT") == False]
+date = date[date["date"].str.contains("Eid Ul Fitr Holiday Notice") == False]
+date = date[date["date"].str.contains("MPOB Monthly Report") == False]
+date.reset_index(drop=True, inplace=True)  # reset index
 
 # clean up prices
 prices = df['price'].astype('str').str.extractall('(\d+)').unstack().dropna().astype(int)
