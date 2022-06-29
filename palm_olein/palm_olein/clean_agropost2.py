@@ -23,14 +23,5 @@ print(df2[~mask])
 df2 = df2[mask].copy()  # we only want dates that start with an integer
 df2.reset_index(drop=True, inplace=True)  # reset index
 
-# clean up prices
-# prices = df['price'].astype('str').str.extractall('(\d+)').unstack().dropna().astype(int)
-# prices.columns = ['price']  # rename the column
-# prices = prices[prices.price > 100]  # remove all values < 100
-# prices.reset_index(drop=True, inplace=True)  # reset the index
-#
-# data = [date.reset_index(drop=True), prices.reset_index(drop=True)]
-# clean_df = pd.concat(data, axis=1)  # problematic line
-
 print(df2)
 df2.to_csv('clean_df_290622.csv')
