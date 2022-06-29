@@ -26,8 +26,8 @@ class AgropostSpider(scrapy.Spider):
     def parse(self, response):
         for date in response.css('h2'):
             yield {
-                'date': date.css('a::text').get(),  # fix_me: this works but its not robust
-                'price': date.xpath('//div/table[2]/tbody/tr/td')[8].get()
+                'date': date.css('a::text').get(),
+                'price': date.xpath('//div/table[2]/tbody/tr/td//text()')[8].extract()
             }
 
     # fix_me: need to parse better. better to get it right early in the process rather than later

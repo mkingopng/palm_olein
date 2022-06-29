@@ -1,16 +1,21 @@
 """
-clean the data scraped using the scrapy Agropost spider
+clean the data scraped using the scrapy agropost spider
+
+this needs to be moved into pipelines once its performing correctly
 """
 import os
 import json
 import numpy as np
 import pandas as pd
 
-pd.options.display.max_rows = 50
-pd.options.display.max_columns = 3
+pd.options.display.max_rows = 100
+pd.options.display.max_columns = 50
+pd.options.display.max_colwidth = 80
+pd.options.display.precision = 10
+pd.options.display.float_format = '{:.2f}'.format
 
 price_json_file = '/home/noone/Documents/GitHub/palm_olein/palm_olein/today.json'
-# price_json_file = os.path.join('palm_olein', 'today.json')
+# price_json_file = os.path.join('palm_olein', 'palm_olein', 'today.json')
 
 raw_data = json.load(open(price_json_file))
 df = pd.read_json(price_json_file)
