@@ -1,13 +1,13 @@
 """
 clean the data scraped using the scrapy Agropost spider
 """
-
+import numpy as np
 import pandas as pd
 
 pd.options.display.max_rows = 50
 pd.options.display.max_columns = 3
 
-price_json_file = '/home/noone/PycharmProjects/palm_olein/palm_olein/prices2.json'
+price_json_file = '/home/noone/Documents/GitHub/palm_olein/palm_olein/290622.json'
 
 df = pd.read_json(price_json_file)
 
@@ -29,4 +29,4 @@ data = [date, prices]
 clean_df = pd.concat(data, axis=1)
 
 print(clean_df)
-clean_df.to_csv('clean_df2.csv')
+clean_df.to_csv('clean_df_290622.csv')

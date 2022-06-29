@@ -5,7 +5,7 @@ import pandas as pd
 
 
 class AgropostSpider(scrapy.Spider):
-    name = "Agropost"
+    name = "agropost"
     start_urls = ["https://agropost.wordpress.com/"]
 
     def parse(self, response):
