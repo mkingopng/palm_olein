@@ -20,9 +20,7 @@ class AgropostSpider(scrapy.Spider):
         "https://agropost.wordpress.com/page/8/",
         "https://agropost.wordpress.com/page/9/",
         "https://agropost.wordpress.com/page/10/"
-        # obviously i could just add more and more to this list,
-        # but I don't think it's the right way
-        # while a while loop to append a new number to the url
+        # fix_me: use a while loop to append a new number to the url until i get a 404 then termiate the loop
     ]
 
     def parse(self, response):
@@ -31,14 +29,5 @@ class AgropostSpider(scrapy.Spider):
                 'date': date.css('a::text').get(),  # fix_me: this works but its not robust
                 'price': date.xpath('//div/table[2]/tbody/tr/td')[8].get()
             }
-        # for price in response.css('table'):
-        #     yield {
-        #         "price": price.css('td::text')[2].get()  # fix_me: this works but its not robust
-        #     }
 
-# fix_me: need to parse better than what I am doing. this is the start of maiking it good
-
-        # next_page = response.css('li.next a::attr(href)').get()
-        # if next_page is not None:
-        #     next_page = response.urljoin(next_page)
-        #     yield scrapy.Request(next_page, callback=self.parse)
+    # fix_me: need to parse better. better to get it right early in the process rather than later
