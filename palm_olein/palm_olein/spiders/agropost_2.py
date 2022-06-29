@@ -19,6 +19,7 @@ class AgropostSpider(scrapy.Spider):
         "https://agropost.wordpress.com/page/10/"
         # obviously i could just add more and more to this list,
         # but I don't think it's the right way
+        # while a while loop to append a new number to the url
     ]
 
     def parse(self, response):
@@ -30,6 +31,8 @@ class AgropostSpider(scrapy.Spider):
             yield {
                 "price": price.css('td::text')[2].get()  # fix_me: this works but its not robust
             }
+
+# fix_me: need to parse better than what I am doing. this is the start of maiking it good
 
         # next_page = response.css('li.next a::attr(href)').get()
         # if next_page is not None:
