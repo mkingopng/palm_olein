@@ -36,11 +36,13 @@ class AgropostSpider(scrapy.Spider):
                 'price': entry.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
             }
 
-    # fix_me: need to parse better. better to get it right early in the process rather than later
 
+# fix_me: need to parse better. better to get it right early in the process rather than later
 # response.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[5]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+# response.xpath('//div[1]/div[3]/div[7]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+# response.xpath('//div[1]/div[3]/div[9]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 
-# todo: exploring the site further, it has changed over time, and the structure of entries has changed. What I'm working
-#  on now will work for a certain number of years but not all. Something to keep in mind.
+# todo: exploring the site further, it has changed over time as WK suspected, and the structure of entries has changed.
+#  What I'm working on now will work for a certain number of years but not all. Something to keep in mind.
