@@ -29,21 +29,17 @@ class AgropostSpider(scrapy.Spider):
 
 # 558 pages
     def parse(self, response):
-        entries = response.xpath('//h2')
-        for entry in entries:
-            date = 1
-            price = 1
-            date_str = str(date)
-            price_str = str(price)
+        for date in response.css('h2'):
             yield {
-                'date': entry.xpath(f'//div[1]/div[3]/h2[{date_str}]/a[1]//text()').extract(),
-                'price': entry.xpath(f'//div[1]/div[3]/div[{price_str}]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+                'date': date.css('a::text').get(),  # fix_me: this works but its not robust
+                'price': date.css('').get()
             }
-            date += 1
-            price += 2
 
 
 # fix_me: need to parse better. better to get it right early in the process rather than later
+
+# tables CSS
+# post-14849 > table:nth-child(7) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(3)
 
 # dates
 # /div[1]/div[3]/h2[2]/a[1]
@@ -59,5 +55,5 @@ class AgropostSpider(scrapy.Spider):
 # todo: exploring the site further, it has changed over time as WK suspected, and the structure of entries has changed.
 #  What I'm working on now will work for a certain number of years but not all. Something to keep in mind
 
-# scrapy crawl agropost_3 -O today2.json
+# scrapy crawl agropost_1 -O today2.json
 
