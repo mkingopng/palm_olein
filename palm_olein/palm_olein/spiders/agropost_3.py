@@ -29,7 +29,7 @@ class AgropostSpider(scrapy.Spider):
         for entry in entries:
             yield {
                 'date': entry.xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract(),  # get() works because we only want the first 'a' in the entry
-                'price': entry.xpath('//div/table[2]/tbody/tr/td//text()')[8].extract()
+                'price': entry.xpath('//table[2]/tbody/tr[2]/td[3]//text()').extract()
             }
 
     # fix_me: need to parse better. better to get it right early in the process rather than later
@@ -39,6 +39,7 @@ class AgropostSpider(scrapy.Spider):
 # entries = response.xpath('//h2')
 # entries[4].css('a::text').get()
 # entries[4].xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract()
-# entries[11].xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
-
-
+#
+# response.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+# response.xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+# response.xpath('//div[1]/div[3]/div[5]/table[2]/tbody/tr[2]/td[3]//text()').extract()
