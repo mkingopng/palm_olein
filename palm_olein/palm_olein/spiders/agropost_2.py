@@ -32,3 +32,5 @@ class AgropostSpider(scrapy.Spider):
             }
 
     # fix_me: need to parse better. better to get it right early in the process rather than later
+
+

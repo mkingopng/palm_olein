@@ -32,7 +32,7 @@ class AgropostSpider(scrapy.Spider):
         for date in response.css('h2'):
             yield {
                 'date': date.css('a::text').get(),
-                'price': date.css('td::text')[2].get()
+                # 'price': date.css('td::text')[2].get()
             }
 
     # def parse(self, response):
@@ -49,6 +49,7 @@ class AgropostSpider(scrapy.Spider):
     #         date += 1
     #         price += 2
 
+
 # fix_me: need to parse better. better to get it right early in the process rather than later
 
 # tables CSS
@@ -58,7 +59,8 @@ class AgropostSpider(scrapy.Spider):
 # /div[1]/div[3]/h2[2]/a[1]
 # /div[1]/div[3]/h2[3]/a[1]
 
-# prices
+# prices - these are 'hard' xpath. I can use them to select a single data point but I can't figure out how to use them
+# to iterate through a web page
 # response.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[5]/table[2]/tbody/tr[2]/td[3]//text()').extract()
@@ -68,7 +70,10 @@ class AgropostSpider(scrapy.Spider):
 # todo: exploring the site further, it has changed over time as WK suspected, and the structure of entries has changed.
 #  What I'm working on now will work for a certain number of years but not all. Something to keep in mind
 
-# scrapy crawl agropost_3 -O today3.json
+# scrapy crawl agropost_3 -O output_3.json
 
+# response.xpath('//*[@class="entry-title"]')  # this works and could be a replacement for the date css
 
+# response.xpath('//*[@class="entry-content"]')
 
+# response.xpath('//*[@id="post-14851"]')  # this works for a single post, but need to do some kind of regex so it doesn't have a specific id number

@@ -14,8 +14,8 @@ pd.options.display.max_colwidth = 80
 pd.options.display.precision = 10
 pd.options.display.float_format = '{:.2f}'.format
 
-price_json_file = '/home/noone/Documents/GitHub/palm_olein/palm_olein/today.json'
-# price_json_file = os.path.join('palm_olein', 'palm_olein', 'today.json')
+price_json_file = '/home/noone/Documents/GitHub/palm_olein/palm_olein/output_1.json'
+# price_json_file = os.path.join('palm_olein', 'palm_olein', 'output_1.json')
 
 raw_data = json.load(open(price_json_file))
 df = pd.read_json(price_json_file)
