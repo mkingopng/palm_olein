@@ -25,16 +25,29 @@ class AgropostSpider(scrapy.Spider):
     # MK: I've tried the loop idea, and it won't work. scrapy doesn't like iterables in this location. Reading the
     # documentation, it's not as simple as we thought. there are a few ways that it could be done. one is to incorporate
     # it in the parse function, another is to use the exception handling functionality in middleware. I'll think about
-    # it. for now, I'm more concerned with getting the damn prices right
+    # it. for now, I'm more concerned with getting the damn prices right.
 
 # 558 pages
     def parse(self, response):
         for date in response.css('h2'):
             yield {
-                'date': date.css('a::text').get(),  # fix_me: this works but its not robust
+                'date': date.css('a::text').get(),
                 'price': date.css('td::text')[2].get()
             }
 
+    # def parse(self, response):
+    #     entries = response.xpath('//h2')
+    #     for entry in entries:
+    #         date = 1
+    #         price = 1
+    #         date_str = str(date)
+    #         price_str = str(price)
+    #         yield {
+    #             'date': entry.xpath(f'//div[1]/div[3]/h2[{date_str}]/a[1]//text()').extract(),
+    #             'price': entry.xpath(f'//div[1]/div[3]/div[{price_str}]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+    #         }
+    #         date += 1
+    #         price += 2
 
 # fix_me: need to parse better. better to get it right early in the process rather than later
 
