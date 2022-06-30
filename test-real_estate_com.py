@@ -13,6 +13,9 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+
+from scrapy.selector import Selector
+
 import time
 import pandas as pd         #to save CSV file
 from bs4 import BeautifulSoup
@@ -45,6 +48,22 @@ for row in rows:
 	table_data.append(row_data)
 
 df = pd.DataFrame(table_data)
+
+# WK: play around to find the xpaths for the key items you want to scrape
+# the following find all h2 with the `class` attribute being 'entry-title'
+text = driver.page_source
+all_h2_headers = Selector(text=text).xpath("//h2[@class='entry-title']")
+
+# all_h2_headers = driver.find_elements(by=By.XPATH, value="//h2[@class='entry-title']")
+h2 = all_h2_headers[0]
+title_text_raw = h2.xpath("./a[1]//text()").get()  # WKNOTE: XPATH index starts from 1
+date_text = title_text_raw.split(' – ')[0]
+midday_closing = title_text_raw.split('\xa0')[-1]
+
+# WKNOTE: XPATH - get the next following sibling where the tag is "div",
+#   then drill down to the 2nd table, 2nd row and 3rd cell
+palm_olein_price = h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()
+
 
 xpath_sold_btn = "//button[@role='tab' and text()='Sold']"  # get the sold button
 sold_btns = driver.find_elements(by=By.XPATH, value=xpath_sold_btn)
