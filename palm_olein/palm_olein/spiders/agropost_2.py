@@ -24,11 +24,23 @@ class AgropostSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for date in response.xpath('//h2'):
+        # WK: the following find all h2 with the `class` attribute being 'entry-title'
+        for h2 in response.xpath("//h2[@class='entry-title']"):
+            title_text_raw = h2.xpath("./a[1]//text()").get()  # WKNOTE: XPATH index starts from 1
+            date_text = title_text_raw.split(' – ')[0]
+
+            # WK: exercise for you Michael, you can try to identify the date_text being invalid to skip an iteration,
+            #   so that you don't need to clean this at a later stage
+            midday_closing = title_text_raw.split('\xa0')[-1]
+            # WK: XPATH - get the next following sibling where the tag is "div",
+            #   then drill down to the 2nd table, 2nd row and 3rd cell
+            palm_olein_price = h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()
+
+
             yield {
-                'date': date.css('a::text').get(),
-                # 'price': date.xpath('//div/table[2]/tbody/tr/td//text()')[8].extract()
-                'price': date.xpath('//table/tbody/tr/td//text()').extract()
+                'date': date_text,
+                'updated_at': midday_closing,
+                'price': palm_olein_price
             }
 
     # fix_me: need to parse better. better to get it right early in the process rather than later
