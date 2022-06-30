@@ -45,4 +45,7 @@ class AgropostSpider(scrapy.Spider):
 # response.xpath('//div[1]/div[3]/div[9]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 
 # todo: exploring the site further, it has changed over time as WK suspected, and the structure of entries has changed.
-#  What I'm working on now will work for a certain number of years but not all. Something to keep in mind.
+#  What I'm working on now will work for a certain number of years but not all. Something to keep in mind
+
+# scrapy crawl agropost_3 -O today2.json
+
