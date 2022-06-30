@@ -25,12 +25,14 @@ class AgropostSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
+        i = 1
         entries = response.xpath('//h2')
         for entry in entries:
             yield {
-                'date': entry.xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract(),  # get() works because we only want the first 'a' in the entry
-                'price': entry.xpath('//table[2]/tbody/tr[2]/td[3]//text()').extract()
+                'date': entry.xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract(),
+                'price': entry.xpath(f'//div[{i}]/table[2]/tbody/tr[2]/td[3]//text()').extract()
             }
+            i += 2
 
     # fix_me: need to parse better. better to get it right early in the process rather than later
 
