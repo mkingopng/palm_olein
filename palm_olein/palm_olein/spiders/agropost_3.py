@@ -32,7 +32,7 @@ class AgropostSpider(scrapy.Spider):
         for date in response.css('h2'):
             yield {
                 'date': date.css('a::text').get(),  # fix_me: this works but its not robust
-                'price': date.css('').get()
+                'price': date.css('td::text')[2].get()
             }
 
 
@@ -55,5 +55,7 @@ class AgropostSpider(scrapy.Spider):
 # todo: exploring the site further, it has changed over time as WK suspected, and the structure of entries has changed.
 #  What I'm working on now will work for a certain number of years but not all. Something to keep in mind
 
-# scrapy crawl agropost_1 -O today2.json
+# scrapy crawl agropost_3 -O today3.json
+
+
 
