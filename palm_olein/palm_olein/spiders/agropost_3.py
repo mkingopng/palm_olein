@@ -1,11 +1,12 @@
 import scrapy
+from scrapy import *
 import pandas as pd
 
 # from selenium_and_firefox import date_list
 
 
 class AgropostSpider(scrapy.Spider):
-    name = "agropost_2"
+    name = "agropost_3"
 
     # WK: as we have seen together, the pattern of paging is straightforward. We can keep exploring until will hit a
     #   page that shown Error 404. This logic can help you build a finite list of urls to feed here to the scrapy.Spider
@@ -20,15 +21,24 @@ class AgropostSpider(scrapy.Spider):
         "https://agropost.wordpress.com/page/8/",
         "https://agropost.wordpress.com/page/9/",
         "https://agropost.wordpress.com/page/10/"
-        # fix_me: use a while loop to append a new number to the url until i get a 404 then termiate the loop
+        # fix_me: use a while loop to append a new number to the url until i get a 404 then terminate the loop
     ]
 
     def parse(self, response):
-        for date in response.xpath('//h2'):
+        entries = response.xpath('//h2')
+        for entry in entries:
             yield {
-                'date': date.css('a::text').get(),
-                # 'price': date.xpath('//div/table[2]/tbody/tr/td//text()')[8].extract()
-                'price': date.xpath('//table/tbody/tr/td//text()').extract()
+                'date': entry.xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract(),  # get() works because we only want the first 'a' in the entry
+                'price': entry.xpath('//div/table[2]/tbody/tr/td//text()')[8].extract()
             }
 
     # fix_me: need to parse better. better to get it right early in the process rather than later
+
+
+
+# entries = response.xpath('//h2')
+# entries[4].css('a::text').get()
+# entries[4].xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract()
+# entries[11].xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+
+
