@@ -31,13 +31,25 @@ class AgropostSpider(scrapy.Spider):
     def parse(self, response):
         entries = response.xpath('//h2')
         for entry in entries:
+            date = 1
+            price = 1
+            date_str = str(date)
+            price_str = str(price)
             yield {
-                'date': entry.xpath('//div[1]/div[3]/h2[2]/a[1]//text()').extract(),
-                'price': entry.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
+                'date': entry.xpath(f'//div[1]/div[3]/h2[{date_str}]/a[1]//text()').extract(),
+                'price': entry.xpath(f'//div[1]/div[3]/div[{price_str}]/table[2]/tbody/tr[2]/td[3]//text()').extract()
             }
+            date += 1
+            price += 2
 
 
 # fix_me: need to parse better. better to get it right early in the process rather than later
+
+# dates
+# /div[1]/div[3]/h2[2]/a[1]
+# /div[1]/div[3]/h2[3]/a[1]
+
+# prices
 # response.xpath('//div[1]/div[3]/div[1]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[3]/table[2]/tbody/tr[2]/td[3]//text()').extract()
 # response.xpath('//div[1]/div[3]/div[5]/table[2]/tbody/tr[2]/td[3]//text()').extract()
