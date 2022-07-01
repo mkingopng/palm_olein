@@ -1,7 +1,7 @@
 # palm_olein
 
 analysis and forecasting of palm olein price and market dynamics
-
+![](/home/noone/Documents/GitHub/palm_olein/palm-oil.jpg)
 # Objective of the project
 
 - Build pipeline to automatically collect, and clean data from a mixture of sources.
