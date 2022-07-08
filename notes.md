@@ -12,7 +12,7 @@ once the output of the scraper is as correct as possible, need to:
 - move the cleaning function to pipeline
 - items.py?
 - middleware.py?
-- other pipeline functions, eg checking fo duplicates
+- other pipeline functions, e.g. checking fo duplicates
 - write to database
 
 # what other information can I scrape to flesh out the information I have?
