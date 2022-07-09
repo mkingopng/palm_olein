@@ -19,7 +19,7 @@ class AgropostSpider(scrapy.Spider):
     def parse(self, response):
         pattern_1 = re.compile("[0-9]")
         datetime_pattern = re.compile(r'\d{1,2} \w+ \d{2,4}')
-        pattern_2 = re.compile("^\d\d+(\.[1-9])?$")  # ("[0-9]{3,4}]")
+        pattern_2 = re.compile(r"^\d\d+(\.[1-9])?$")  # ("[0-9]{3,4}]")
         for h2 in response.xpath("//h2[@class='entry-title']"):
             if h2.xpath("./a[1]//text()").get() is not None and pattern_1.match(h2.xpath("./a[1]//text()").get()):
                 title_text_raw = h2.xpath("./a[1]//text()").get()
