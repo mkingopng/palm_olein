@@ -13,7 +13,7 @@ class AgropostSpider(scrapy.Spider):
     # rules = [Rule(LinkExtractor(allow='/page/'), callback='parse', follow=True)]
 
     def start_requests(self):
-        for idx in range(1, 5):
+        for idx in range(1, 560):
             yield scrapy.Request(url=f"https://agropost.wordpress.com/page/{idx}/", callback=self.parse)
 
     def parse(self, response):
@@ -31,7 +31,6 @@ class AgropostSpider(scrapy.Spider):
                 pass
             if pattern_2.match(h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()):
                 palm_olein_price = h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()
-                # h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get() is not None and\
             else:
                 pass
 
