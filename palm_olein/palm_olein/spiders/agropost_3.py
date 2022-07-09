@@ -13,29 +13,32 @@ class AgropostSpider(scrapy.Spider):
     # rules = [Rule(LinkExtractor(allow='/page/'), callback='parse', follow=True)]
 
     def start_requests(self):
-        for idx in range(1, 558):
+        for idx in range(1, 560):
             yield scrapy.Request(url=f"https://agropost.wordpress.com/page/{idx}/", callback=self.parse)
 
     def parse(self, response):
         pattern_1 = re.compile("[0-9]")
+        datetime_pattern = re.compile(r'\d{1,2} \w+ \d{2,4}')
         pattern_2 = re.compile("^\d\d+(\.[1-9])?$")  # ("[0-9]{3,4}]")
         for h2 in response.xpath("//h2[@class='entry-title']"):
             if h2.xpath("./a[1]//text()").get() is not None and pattern_1.match(h2.xpath("./a[1]//text()").get()):
                 title_text_raw = h2.xpath("./a[1]//text()").get()
-                date_text = title_text_raw.split(' – ')[0]
+                # date_text = title_text_raw.split(' – ')[0]
+                extracted = datetime_pattern.search(title_text_raw)
+                date_text = extracted.group() if extracted else title_text_raw
                 midday_closing = title_text_raw.split('\xa0')[-1]
             else:
                 pass
             if pattern_2.match(h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()):
                 palm_olein_price = h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get()
-                # h2.xpath(".//following-sibling::div[1]/table[2]/tbody/tr[2]/td[3]//text()").get() is not None and\
             else:
                 pass
 
             yield {
                 'date': date_text,
                 'updated_at': midday_closing,
-                'price': palm_olein_price
+                'price': palm_olein_price,
+                'url': response.url,
             }
             # item = PalmOleinItem()
             # item["date"] = date_text
