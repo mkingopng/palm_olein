@@ -1,6 +1,9 @@
 # scraper problems
 I think there are about 6 issues that need to be resolved:
-- problem on line 213 - 228, 1844, 3071, 3332, 3420, 3422 all seem similar -> NBSP is some HTML syntax
+- the addition of the URL is quite interesting. The rows scraped are not strictly sequential. the first row is from pg 2
+- the first page now appears on row 247 - 256
+- row 660, 1205 - 1543, 2377 - 2378, 2499, 2503, 2710, 2734, 2788, 2916, 2917, 2919 -> NBSP is some HTML syntax
+- 2407 - 2408
 - row 1540 - 1545 are missing month and year
 - row 2273, 2288 seem similar, looks like dates are repeated
 - row 2320, 2903, 3344 seem similar. looks like number is duplicated.
