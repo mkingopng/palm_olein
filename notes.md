@@ -1,11 +1,13 @@
 # scraper problems
 I think there are about 6 issues that need to be resolved:
-- problem on line 213 - 228, 1844, 3071, 3332, 3420, 3422 all seem similar
+- problem on line 213 - 228, 1844, 3071, 3332, 3420, 3422 all seem similar -> NBSP is some HTML syntax
 - row 1540 - 1545 are missing month and year
 - row 2273, 2288 seem similar, looks like dates are repeated
 - row 2320, 2903, 3344 seem similar. looks like number is duplicated.
 - some examples of extra whitespace
 - how do we verify the accuracy of the data?
+- regex 101
+- re.search
 
 # Next steps
 once the output of the scraper is as correct as possible, need to:
