@@ -42,5 +42,5 @@ for p in range(len(post_head)):
 
 data_tuples = list(zip(date_list[1:], correct_price_list[1:]))
 temp_df = pd.DataFrame(data_tuples, columns=["Date", "Price"])
-temp_df.to_csv("date_and_price.csv")
+temp_df.to_csv("palm_olein_date_and_price.csv")
 print(temp_df)

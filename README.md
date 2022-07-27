@@ -1,30 +1,55 @@
-# palm_olein
+# Palm Olein
+analysis and forecasting of palm olein price over time. 
 
-analysis and forecasting of palm olein price and market dynamics
-![](/home/noone/Documents/GitHub/palm_olein/palm-oil.jpg)
-# Objective of the project
+<img src="data/palm-oil.jpg"/>
 
+## Business Goals for the project: 
+- to understand the long term drivers of price 
+- to understand the short term drivers of price and recent volatility
+- to accurately forecast short term and long term price movements 
+
+## Hypothesis:
+long term prices are driven by both supply and demand factors. 
+
+On the supply side, over the **long term** I expect to see a relationship between price and 
+- the total land area under cultivation
+- changing production efficiencies per hectare
+
+On the supply side over the **short term** I expect to see fluctuations driven by:
+- weather
+- abnormal events: war, pandemic, etc
+- government export policy
+
+On the **demand** side over the **long term** I expect to see a relationship between price and
+- population growth in key import markets: china & india
+- economic development (GDP growth of the total economy and per capita) in key import markets: china & india
+
+On the **demand** side over the **short term** I expect to see a relationship between price and
+- seasonality around harvests, holidays and other events that the market expects to affect price.
+- prices of substitute edible oils
+- market sentiment
+
+# Technical Objectives of the project
 - Build pipeline to automatically collect, and clean data from a mixture of sources.
-- save the data to a postgres database hosted on AWS
-- analyse the data to understand long term and short term trends in the palm oil and edible oils markets.
-- Build models to infer price of palm oil in the long-, mid-, and short-term future
+- aggregate and save the data to a mariadb database hosted on AWS
+- analyse the data to understand long term and short term trends in the palm oil market.
+- Build models to infer price of palm oil in the long-, mid-, and short-term time horizons
 - Inform decision-making whether to buy or hold at spot, or the forward pricing based on predictions
 
 # Data Collection:
-- the Food and Agriculture Organisation (FAO), a part of the UN, has good data. The only issue is that data is mostly annual. It serves as a good source for the long-term data
-- I have 2 years of daily price data that will suffice to get basic scaffold up, however more dat is required.
-- **free** price data is difficult to find. Most commodity prices are available through paid subscription. It was a requirement that data be free. A website (https://agropost.wordpress.com/) has been found that posts free market updates daily, and has price data dating back to 2011. The data is not in an easily extracted format, and will require scraping to obtain and organise. Significant cleaning requirements are anticipated.
+- the Food and Agriculture Organisation (FAO), a part of the UN, has good data. The only issue is that data is mostly 
+annual. It is a good source for the long-term data
+- **agropost** has free data for daily price movements of palm oil
+- **worldometers** has free data for population and economic growth
+- **world bank** also has free data for population and economic growth
 
 # Analysis
-
 ## The long term palm oil and edible oil markets:
-
 - the demand for edible oil has grown enormously over the last 60 years, driven by population growth and economic development
 - production & consumption of palm oil has increased more than other edible oils over the period, due to its favourable production costs, relatively low price and high yield per hectare
 - palm olein/oil now accounts for the largest share of edible oil production & consumption.
 
 # Notebook 1: the long term trends the palm oil and vegetable oil markets
-
 - geo plot country-wise consumption of palm oil (cannot easily get data against consumption)
 - geo plot country-wise production of palm oil (production is the proxy for consumption)
 - or import data for a country (quanbo)
@@ -34,7 +59,6 @@ analysis and forecasting of palm olein price and market dynamics
 - Comparision between veg oil production and land used
 
 ## The recent palm oil market:
-
 - labour shortages in 2020 contributed to a supply constrain. Most
   malaysian palm oil plantations rely on indonesian labour. With the COVID lockdowns in 2020 there was annecdotally an
   impact on supply.

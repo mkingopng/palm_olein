@@ -1,31 +1,30 @@
+# Data Sources
 
-Good article on palm oil from the perspective of land clearing:
+## Sources:
+- Food and Agriculture Organization of the United Nations (FAO) (2020)
+- daily market prices for palm olein: https://agropost.wordpress.com/
+- population growth by country over time: worldometers: https://www.worldometers.info/world-population/population-by-country/
+- GDP growth p/a by country over time: worldometers https://www.worldometers.info/gdp/gdp-by-country/
+- GDP per capita by country over time: worldometers https://www.worldometers.info/gdp/gdp-per-capita/
 
-    - https://ourworldindata.org/palm-oil
+## Other sources
+- Good article on palm oil from the perspective of land clearing: https://ourworldindata.org/palm-oil
+- https://markets.businessinsider.com/commodities/palm-oil-price/usd
+- https://markets.businessinsider.com/commodities/palm-oil-price
+- https://iopscience.iop.org/article/10.1088/1748-9326/aaf6db
 
-Sources:
-	- https://markets.businessinsider.com/commodities/palm-oil-price/usd
-
-	- https://markets.businessinsider.com/commodities/palm-oil-price
-
-	- Food and Agriculture Organization of the United Nations (FAO) (2020)
-
-	- https://iopscience.iop.org/article/10.1088/1748-9326/aaf6db
-
-	- https://agropost.wordpress.com/
-
-Production by Crop
+## Production by Crop
 - the dataset was obtained from FAOSTAT, and covers the period 1961 - 2020. The following commodities: Oil, cottonseed;
 Oil, linseed; Oil, Soybean; Oil, Olive; Oil, maize; Oil, Groundnut; Oil, Palm Kernel; Oil, Rapeseed; Oil Safflower;
 Oil Sesame; Oil; Sunflower
 
-need additional data
-	- RBD palm olein FOB malaysia.
-	- palm oil exports.
-	- palm oil imports by country by month or day.
-	- public policy affecting demand
-	- covid related effects on the industry
-	- weather
+## need additional data
+- RBD palm olein FOB malaysia.
+- palm oil exports.
+- palm oil imports by country by month or day.
+- public policy affecting demand
+- covid related effects on the industry
+- weather
 
 Chart 1: production of vegetable oil per year by type, stacked line chart
 data from FAOSTAT,

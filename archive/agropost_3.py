@@ -2,7 +2,7 @@ import scrapy
 import re
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
-from ..items import PalmOleinItem
+from palm_olein.palm_olein.items import PalmOleinItem
 
 
 class AgropostSpider(scrapy.Spider):
@@ -10,7 +10,6 @@ class AgropostSpider(scrapy.Spider):
     idx = 1
     allowed_domains = ['https://agropost.wordpress.com']
     start_urls = 'https://agropost.wordpress.com'
-    # rules = [Rule(LinkExtractor(allow='/page/'), callback='parse', follow=True)]
 
     def start_requests(self):
         for idx in range(1, 560):

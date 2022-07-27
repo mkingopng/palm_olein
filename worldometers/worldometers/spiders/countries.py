@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 import logging
 
@@ -8,17 +9,10 @@ class CountriesSpider(scrapy.Spider):
     start_urls = ['https://www.worldometers.info/world-population/population-by-country/']
 
     def parse(self, response):
-        """
-        catch the response from the spider's scraping
-        :param response:
-        :return:
-        """
         countries = response.xpath('//td/a')
         for country in countries:
             name = country.xpath('.//text()').get()
             link = country.xpath('.//@href').get()
-            # absolute_url = f"https://www.worldometers.info{link}"
-            # absolute_url = response.urljoin(link)
             yield response.follow(url=link, callback=self.parse_country, meta={'country_name': name})
 
     def parse_country(self, response):
