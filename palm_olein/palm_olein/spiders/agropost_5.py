@@ -8,7 +8,7 @@ class Agropost5Spider(scrapy.Spider):
     start_urls = ['http://agropost.wordpress.com/']
 
     def start_requests(self):
-        for idx in range(1, 560):
+        for idx in range(0, 563):
             yield scrapy.Request(url=f"https://agropost.wordpress.com/page/{idx}/", callback=self.parse)
 
     def parse(self, response):
