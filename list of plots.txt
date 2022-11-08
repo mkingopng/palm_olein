@@ -1,0 +1,53 @@
+List of plots
+
+    1. palm oil production (by fruit and by oil)
+    Crops - Oil, palm - 257 - Production - 5510 - tonnes
+
+    2. vegetable oil production
+    Crops processed - Oil, soybean - 237 - Production - 5510 - tonnes
+    Crops processed - Oil, sesame - 290 - Production - 5510 - tonnes
+    Crops processed - Oil, linseed - 334 - Production - 5510 - tonnes
+    Crops processed - Oil, palm - 257 - Production - 5510 - tonnes
+    Crops processed - Oil, rapeseed - 271 - Production - 5510 - tonnes
+    Crops processed - Oil, groundnut - 244 - Production - 5510 - tonnes
+    Crops processed - Oil, cottonseed - 331 - Production - 5510 - tonnes
+    Crops processed - Oil, coconut (copra) - 252 - Production - 5510 - tonnes
+    Crops processed - Oil, olive, virgin - 261 - Production - 5510 - tonnes
+    Crops processed - Oil, safflower - 281 - Production - 5510 - tonnes
+    Crops processed - Oil, sunflower - 268 - Production - 5510 - tonnes
+    Crops processed - Oil, maize - 60 - Production - 5510 - tonnes
+    Crops processed - Oil, palm kernel - 258 - Production - 5510 - tonnes
+
+    3. palm oil imports (map)
+    palm oil imports (chart)
+    New Food Balances - Palm Oil - 2577 - Import Quantity - 5611 - 1000 tonnes
+
+    4. oil palm production (map)
+    oil palm production (line chart)
+    Crops - Oil, palm - 257 - Production - 5510 - tonnes
+
+    5. land use for oil palm production by country (line plot)
+    Crops - Oil palm fruit - 254 - Area harvested - 5312 - ha
+
+    6. land use for vegetable oil crops
+    Crops - Olives - 260 - Area harvested - 5312 - ha
+    Crops - Rapeseed - 270 - Area harvested - 5312 - ha
+    Crops - Soybeans - 236 - Area harvested - 5312 - ha
+    Crops - Safflower seed - 280 - Area harvested - 5312 - ha
+    Crops - Sunflower seed - 267 - Area harvested - 5312 - ha
+    Crops - Oil palm fruit - 254 - Area harvested - 5312 - ha
+    Crops - Coconuts - 249 - Area harvested - 5312 - ha
+    Crops - Groundnuts, with shell - 242 - Area harvested - 5312 - ha
+    Crops - Linseed - 333 - Area harvested - 5312 - ha
+    Crops - Seed cotton - 328 - Area harvested - 5312 - ha
+    Crops - Sesame seed - 289 - Area harvested - 5312 - ha
+    Crops - Castor oil seed - 265 - Area harvested - 5312 - ha
+    Crops - Karite nuts (sheanuts) - 263 - Area harvested - 5312 - ha
+    Crops - Tung nuts - 275 - Area harvested - 5312 - ha
+
+    7. oil yield by crop type, palm oil yield over time
+
+    8. share of vegetable oil land use and production by crop (horizontal bar plots)
+
+    9. price over time
+    data from wordpress site
