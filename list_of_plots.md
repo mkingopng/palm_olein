@@ -31,16 +31,42 @@ engagement. In addition to the initial research and development work, Deloitte
 would also charge the client for the ongoing maintenance cost of the reporting 
 tool, and the model.
 
-
-
 # Plots
 * price of palm oil over time
 * price of edible oils over time
 
+conclusion
+
+# imports
 * palm oil imports geoplot over time
+* 
+
+conclusion: demand and trade has grown over time. Demand growth is a function 
+of population growth and economic development. As per capita GDP increases, 
+consumption of dietary fats increases. Both have occurred most in China and 
+India, who are coincidentally the highest importers
+
 * palm oil production over time
 * palm oil exports over time
 
 * land used for palm oil
 * land used for vegetable oil
+* productivity per hectare by oil crop
 
+conclusion: production has continued to grow. palm oil's rate of production 
+increase has been faster than other oil crops due to its low cost of production
+however the rate at which land used for production is lower than the rate of 
+increase on volume of production and its high yield per hectare
+
+* price over time
+* cost per ton of palm oil relative to other oils
+conclusion: 
+
+Drivers of Demand Growth
+* population growth
+* per capita GDP
+
+Drivers of Supply Growth
+* land clearing and land under cultivation
+* increased productivity
+* 
